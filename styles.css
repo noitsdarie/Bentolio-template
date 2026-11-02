@@ -1,0 +1,247 @@
+/* Підключення шрифту Urbanist */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+  --color-primary-bg: #FADCD9;    /* Основний ніжний рожевий колір блоків */
+  --color-accent-bg: #F8AFA6;     /* Акцентний кораловий колір (блок Contact, роздільники, ховери) */
+  --color-white: #F9F1F0;         /* Білий колір */
+  --color-text-main: #000000;     /* Основний колір тексту */
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-sizing: border-box;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 21px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 101px;
+  width: 1392px;
+  max-width: 100%;
+  background-color: var(--color-primary-bg);
+  border-radius: 20px;
+}
+
+.name {
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-left: 24px;
+}
+
+.name i {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.name b {
+  font-weight: 600;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  margin: 0 24px;
+  font-weight: 400;
+}
+
+/* Загальний контейнер */
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 0 auto;
+  width: 1392px;
+  max-width: 100%;
+}
+
+/* Grid для лівої частини (2/3) */
+.container {
+  display: grid;
+  flex: 2; /* ~66.6% від загальної ширини */
+  
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 480px 351px;
+  gap: 25px;
+
+  grid-template-areas:
+    "title       title       title       title       title       title       picture     picture     picture     picture"
+    "description description description description description contact     contact     contact     contact     contact";
+}
+
+.container div {
+  border-radius: 20px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Прив'язка блоків */
+.item1 { 
+  grid-area: title;
+  position: relative;
+  background-color: var(--color-primary-bg);
+}
+
+div.flower {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+div.flower img {
+  display: block;
+  height: auto;
+}
+
+.item-1-text {
+  margin-top: 200px;
+  font-size: 50px;
+}
+
+.item2 { 
+  grid-area: picture;
+  background-image: url("/pictures/Girl_Image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item3 { 
+  grid-area: description;
+  position: relative;
+  background-color: var(--color-primary-bg);
+}
+
+div.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+div.circle img {
+  display: block;
+  height: auto;
+}
+
+.item-3-text {
+  margin-top: 130px;
+  line-height: 25px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.item4 { 
+  grid-area: contact; 
+  background-color: var(--color-accent-bg);
+  position: relative;
+}
+
+div.arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.item-4-text {
+  font-size: 15px;
+}
+
+.item-4-contact-me {
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Права колонка (1/3) */
+.side-column {
+  flex: 1; /* ~33.3% від загальної ширини */
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.side-column .menu {
+  height: 731px;
+  background-color: var(--color-primary-bg);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.side-column .social {
+  height: 100px;
+  background-color: var(--color-primary-bg);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.menu-heading {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.menu-heading-title {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.menu-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.devider {
+  border: solid 1px var(--color-accent-bg);
+  color: var(--color-accent-bg);
+  width: 400px;
+}
+
+.projects {
+  margin: 40px 0 40px 30px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
+.social div {
+  text-transform: uppercase;
+}
+
+/* Ховери */
+.social div:hover {
+  color: var(--color-accent-bg);
+  cursor: pointer;
+}
+
+.projects:hover {
+  color: var(--color-accent-bg);
+  cursor: pointer;
+}
+
+.item-4-contact-me:hover {
+  color: var(--color-primary-bg);
+  cursor: pointer;
+}
